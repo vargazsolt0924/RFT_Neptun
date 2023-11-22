@@ -65,7 +65,7 @@ public class TeacherController {
                     subjectForm.getStartTime(),
                     subjectForm.getDurationInMinutes(),
                     subjectForm.getMaxHallgato(),
-                    subjectForm.getKredit(),
+                    subjectForm.getCredit(),
                     teacherServiceInterface.getTeacherById(id)
             );
 

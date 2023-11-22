@@ -110,7 +110,7 @@ class TeacherControllerTest {
         verify(subjectForm, atLeast(2)).getStartTime();
         verify(subjectForm).getDurationInMinutes();
         verify(subjectForm).getMaxHallgato();
-        verify(subjectForm).getKredit();
+        verify(subjectForm).getCredit();
         verify(teacherServiceInterface).getTeacherById(id);
         assertEquals(redirectView.getUrl(), "/teacher/1");
     }
