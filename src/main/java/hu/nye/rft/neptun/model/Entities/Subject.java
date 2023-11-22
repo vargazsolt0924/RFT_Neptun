@@ -1,4 +1,4 @@
-package hu.nye.rft.neptun.model.entities;
+package hu.nye.rft.neptun.model.Entities;
 
 import lombok.NoArgsConstructor;
 
@@ -42,6 +42,9 @@ public class Subject {
         this.durationInMinutes = durationInMinutes;
         this.maxStudent = maxStudent;
         this.kredit = kredit;
+    }
+
+    public Subject(String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxHallgato, int kredit, Teacher teacherById) {
     }
 
     public void addStudent(Student student) {

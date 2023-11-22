@@ -1,4 +1,4 @@
-package hu.nye.rft.neptun.model.entities;
+package hu.nye.rft.neptun.model.Entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;

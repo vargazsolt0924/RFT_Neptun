@@ -8,7 +8,7 @@ public class RegisterForm {
     private String username;
     private String password;
     private String type;
-
+    public String name;
     public void setUsername(String username) {
         this.username = username;
     }
@@ -21,12 +21,17 @@ public class RegisterForm {
         this.type = type;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
+        return "RegisterForm{" +
                 "username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", type='" + type + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 }
