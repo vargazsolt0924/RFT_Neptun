@@ -1,4 +1,4 @@
-name: Java CI
+name: RFT Java CI
 
 on: [push]
 
@@ -13,15 +13,15 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Compile with Maven
-        run: mvn -f C:\Users\User\IdeaProjects\Github\RFT_Neptun\pom.xml compile
+        run: mvn -f /C/Users/User/IdeaProjects/Github/RFT_Neptun/pom.xml compile
       - name: Test with Maven
-        run: mvn -f C:\Users\User\IdeaProjects\Github\RFT_Neptun\pom.xml test
+        run: mvn -f /C/Users/User/IdeaProjects/Github/RFT_Neptun/pom.xml test
       - name: Coverage with JaCoCo
         if: always()
-        run: mvn -f C:\Users\User\IdeaProjects\Github\RFT_Neptun\pom.xml jacoco:report
+        run: mvn -f /C/Users/User/IdeaProjects/Github/RFT_Neptun/pom.xml jacoco:report
       - name: Publish coverage report
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: neptun-coverage
-          path: C:\Users\User\IdeaProjects\Github\RFT_Neptun\target\site\jacoco
+          path: /C/Users/User/IdeaProjects/Github/RFT_Neptun/target/site/jacoco
