@@ -1,6 +1,16 @@
 body {
     background-color: #798fdaac;
+    margin: 0;
+      padding: 0;
 }
+.image-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+
+}
+
 .login-container {
     position: absolute;
     top: 50%;
