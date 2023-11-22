@@ -1,4 +1,4 @@
-package hu.nye.rft.neptun.service.services.db;
+package hu.nye.rft.neptun.service.db;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
