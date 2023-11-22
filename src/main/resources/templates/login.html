@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="hu" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Neptun | Belépés</title>
@@ -22,13 +22,13 @@
             </div>
             <div class="form-group">
                 <label>Jogosultság:</label>
-                <input type="radio" value="student" name="type" checked id="type">
+                <input type="radio" value="student" name="type" checked typeInput="type">
                 <label for="type">Hallgató</label>
                 <input type="radio" value="teacher" name="type" id="type">
                 <label for="type">Tanár</label>
             </div>
             <button type="submit" class="btn btn-primary">Belépés</button><P> </P>
-            <span class="error-message" style="display: none; color: red;">Nem található ilyen felhasználó.</span>
+            <span th:if="${badLogin == 1}" class="error-message" style="display: none; color: red;">Nem található ilyen felhasználó.</span>
             <p></p>
         </form>
         <form action="register.html">

@@ -59,3 +59,12 @@ td {
 input {
             text-align: center;
                 }
+
+.bevitel{
+            padding: 10px;
+            border: 2px solid #3498db;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+           color: #3498db;
+            }
