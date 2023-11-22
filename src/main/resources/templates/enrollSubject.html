@@ -16,27 +16,27 @@
     <img src="logo.png" alt="logo" width="50%">
 </div>
 <div class="center-screen">
-    <form th:action="@{/hallgato/__${id}__}" method="get">
+    <form th:action="@{/student/__${id}__}" method="get">
         <button type="submit" value="hozzaadoldal" class="btn btn-secondary">Vissza</button>
         <br/>
     </form>
     <div>
         <table>
-            <tr th:unless="${tantargyak.isEmpty()}">
+            <tr th:unless="${subjects.isEmpty()}">
                 <td>Név:</td>
                 <td colspan="2">Időpont:</td>
                 <td>Időtartam:</td>
                 <td>Kredit:</td>
                 <td></td>
             </tr>
-            <tr th:each="tantargy: ${tantargyak}">
-                <td th:text="${tantargy.name}"/>
-                <td th:text="${tantargy.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0"/>
-                <td th:text="${tantargy.startTime}" style="text-align: left !IMPORTANT, padding-left: 0.3rem"/>
-                <td th:text="${tantargy.durationInMinutes} + ' perc'"/>
-                <td th:text="${tantargy.kredit}"/>
+            <tr th:each="subject: ${subjects}">
+                <td th:text="${suvject.name}"/>
+                <td th:text="${subject.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0"/>
+                <td th:text="${subject.startTime}" style="text-align: left !IMPORTANT, padding-left: 0.3rem"/>
+                <td th:text="${subject.durationInMinutes} + ' perc'"/>
+                <td th:text="${subject.credit}"/>
                 <td>
-                    <form th:action="@{/hallgato/__${id}__/enrollTantargy/__${tantargy.tantargyId}__}" method="get">
+                    <form th:action="@{/student/__${id}__/enrollSubject/__${subject.subjectId}__}" method="get">
                         <button type="submit" value="vissza" class="btn btn-primary">Jelentkezés</button>
                     </form>
                 </td>

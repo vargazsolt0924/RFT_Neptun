@@ -15,12 +15,12 @@
     <img src="logo.png" alt="logo" width="50%">
 </div>
 <div class="center-screen">
-    <form th:action="@{/tanar/__${id}__}" method="get" style="margin-bottom: 2rem">
+    <form th:action="@{/teacher/__${id}__}" method="get" style="margin-bottom: 2rem">
         <button type="submit" value="hozzaadoldal" class="btn btn-secondary">Vissza</button>
         <br/>
     </form>
     <div>
-        <form th:action="@{/tanar/__${id}__/addTantargy}" method="post" th:object="${tantargyFormValues}">
+        <form th:action="@{/teacher/__${id}__/addSubject}" method="post" th:object="${SubjectForm}">
             <div class="form-group">
                 <label>Neve:</label>
                 <input type="text" id="name" name="name" size="35" placeholder="A rendszerfejlesztés technológiája"
@@ -42,7 +42,7 @@
             </div>
             <div class="form-group">
                 <label>Kredit:</label>
-                <input type="number" id="kredit" pattern="^[0-9]*$" size="3" name="kredit" value="5"
+                <input type="number" id="credit" pattern="^[0-9]*$" size="3" name="credit" value="5"
                        class="bevitel"><br>
             </div>
             <div class="form-group">

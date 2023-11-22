@@ -6,7 +6,7 @@ import lombok.Getter;
 public class SubjectForm {
     private String dayOfTheWeek;
     private int durationInMinutes;
-    private int kredit;
+    private int credit;
     private int maxHallgato;
     private String name;
     private String startTime;
@@ -19,8 +19,8 @@ public class SubjectForm {
         this.durationInMinutes = durationInMinutes;
     }
 
-    public void setKredit(int kredit) {
-        this.kredit = kredit;
+    public void setcredit(int credit) {
+        this.credit = credit;
     }
 
     public void setMaxHallgato(int maxHallgato) {

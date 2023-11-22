@@ -19,27 +19,27 @@
         <button type="submit" value="vissza" class="btn btn-secondary">Kijelentkezés</button>
         <br><br>
     </form>
-    <form th:action="@{/tanar/__${id}__/addTantargy}" method="get" style="margin-bottom: 1rem">
+    <form th:action="@{/teacher/__${id}__/addSubject}" method="get" style="margin-bottom: 1rem">
         <button type="submit" value="hozzaadoldal" class="btn btn-primary">Új Tantárgy hozzáadása</button>
         <br>
     </form>
 
     <table>
-        <tr th:unless="${tantargyak.isEmpty()}">
+        <tr th:unless="${subjects.isEmpty()}">
             <td>Név:</td>
             <td colspan="2">Időpont:</td>
             <td>Időtartam:</td>
             <td>Kredit:</td>
             <td></td>
         </tr>
-        <tr th:each="tantargy: ${tantargyak}">
-            <td th:text="${tantargy.name}"/>
-            <td th:text="${tantargy.dayOfTheWeek}" style="text-align: right, padding-right: 0"/>
-            <td th:text="${tantargy.startTime}" style="text-align: left, padding-left: 0.3rem"/>
-            <td th:text="${tantargy.durationInMinutes} + ' perc'"/>
-            <td th:text="${tantargy.kredit}"/>
+        <tr th:each="subject: ${subjects}">
+            <td th:text="${subject.name}"/>
+            <td th:text="${subject.dayOfTheWeek}" style="text-align: right, padding-right: 0"/>
+            <td th:text="${subject.startTime}" style="text-align: left, padding-left: 0.3rem"/>
+            <td th:text="${subject.durationInMinutes} + ' perc'"/>
+            <td th:text="${subject.credit}"/>
             <td>
-                <form th:action="@{/tanar/__${id}__/removeTantargy/__${tantargy.tantargyId}__}" method="get">
+                <form th:action="@{/teacher/__${id}__/removeSubject/__${subject.subjectId}__}" method="get">
                     <button type="submit" value="vissza" class="btn btn-primary">Törlés</button>
                     <br>
                 </form>

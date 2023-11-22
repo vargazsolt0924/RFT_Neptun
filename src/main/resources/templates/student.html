@@ -19,13 +19,13 @@
         <button type="submit" value="vissza" class="btn btn-secondary">Kijelentkezés</button>
         <br><br>
     </form>
-    <form th:action="@{/hallgato/__${id}__/enrollTantargy}" method="get">
+    <form th:action="@{/student/__${id}__/enrollSubject}" method="get">
         <button type="submit" value="hozzaadoldal" class="btn btn-primary">Új Tantárgy felvétele</button>
         <br>
     </form>
 
     <table>
-        <tr th:unless="${tantargyak.isEmpty()}">
+        <tr th:unless="${subjects.isEmpty()}">
             <td>Név:</td>
             <td colspan="2">Időpont:</td>
             <td>Időtartam:</td>
@@ -33,15 +33,15 @@
             <td>Tanár:</td>
             <td></td>
         </tr>
-        <tr th:each="tantargy: ${tantargyak}">
-            <td th:text="${tantargy.name}">
-            <td th:text="${tantargy.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0">
-            <td th:text="${tantargy.startTime}" style="text-align: left !IMPORTANT , padding-left: 0.3rem">
-            <td th:text="${tantargy.durationInMinutes} + ' perc'">
-            <td th:text="${tantargy.kredit}">
-            <td th:text="${tantargy.tanar.name}"></td>
+        <tr th:each="subject: ${subjects}">
+            <td th:text="${subject.name}">
+            <td th:text="${subject.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0">
+            <td th:text="${subject.startTime}" style="text-align: left !IMPORTANT , padding-left: 0.3rem">
+            <td th:text="${subject.durationInMinutes} + ' perc'">
+            <td th:text="${subject.credit}">
+            <td th:text="${subject.teacher.name}"></td>
             <td>
-                <form th:action="@{/hallgato/__${id}__/leaveTantargy/__${tantargy.tantargyId}__}" method="get">
+                <form th:action="@{/student/__${id}__/leaveSubject/__${subject.subjectId}__}" method="get">
                     <button type="submit" value="vissza" class="btn btn-primary">Leadás</button>
                     <br>
                 </form>

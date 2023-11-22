@@ -29,22 +29,22 @@ public class Subject {
     @Column(name = "maxStudent", nullable = false)
     public int maxStudent;
 
-    @Column(name = "kredit", nullable = false)
-    public int kredit;
+    @Column(name = "credit", nullable = false)
+    public int credit;
 
     private final Set<Student> students = new HashSet<>();;
 
-    public Subject(Long subjectId, String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxStudent, int kredit) {
+    public Subject(Long subjectId, String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxStudent, int credit) {
         this.subjectId = subjectId;
         this.name = name;
         this.dayOfTheWeek = dayOfTheWeek;
         this.startTime = startTime;
         this.durationInMinutes = durationInMinutes;
         this.maxStudent = maxStudent;
-        this.kredit = kredit;
+        this.credit = credit;
     }
 
-    public Subject(String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxHallgato, int kredit, Teacher teacherById) {
+    public Subject(String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxHallgato, int credit, Teacher teacherById) {
     }
 
     public Long getSubjectId() {
@@ -95,12 +95,12 @@ public class Subject {
         this.maxStudent = maxStudent;
     }
 
-    public int getKredit() {
-        return kredit;
+    public int getCredit() {
+        return credit;
     }
 
-    public void setKredit(int kredit) {
-        this.kredit = kredit;
+    public void setCredit(int credit) {
+        this.credit = credit;
     }
 
     public Set<Student> getStudents() {
