@@ -37,7 +37,7 @@ public class HomeController {
     public RedirectView loginPageWithPost(@ModelAttribute("user") LoginForm loginForm) {
         RedirectView redirectView = new RedirectView();
 
-        if (loginForm.getType().equals("tanar")) {
+        if (loginForm.getType().equals("teacher")) {
             Long teacherID = teacherServiceInterface.getTeacherIdByUsername(loginForm.getUsername());
             if (teacherID == null) {
                 redirectView.setUrl("/?badLogin=1");

@@ -16,17 +16,17 @@ public class Student {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long studentId;
+    public Long studentId;
 
     @Column(name = "name", nullable = false)
-    private String name;
+    public String name;
 
     @Column(name = "userName", nullable = false)
-    private String userName;
+    public String userName;
 
     @Getter
     @JsonIgnore
-    private Set<Subject> subjects = new HashSet<>();
+    public Set<Subject> subjects = new HashSet<>();
 
     public Student(String name, String userName) {
         this.name = name;
