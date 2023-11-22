@@ -49,7 +49,7 @@ public class TeacherController {
     }
 
     @PostMapping("/teacher/{id}/addSubject")
-    public RedirectView addTeacherToDb(@ModelAttribute("subject") SubjectForm subjectForm, @PathVariable Long id) throws UserNotFoundException {
+    public RedirectView addSubjectToDb(@ModelAttribute("subject") SubjectForm subjectForm, @PathVariable Long id) throws UserNotFoundException {
         String url = "/teacher/" + id;
 
         if (

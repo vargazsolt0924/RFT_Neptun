@@ -8,5 +8,5 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
         @Query(value = "SELECT HALLGATO_ID FROM HALLGATO WHERE USERNAME = ?1", nativeQuery = true)
         Long findIdByUserName(String userName);
 
-        boolean existsHallgatoByUserName(String userName);
+        boolean existsStudentByUserName(String userName);
 }

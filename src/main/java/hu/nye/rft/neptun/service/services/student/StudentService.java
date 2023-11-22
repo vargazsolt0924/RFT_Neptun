@@ -44,7 +44,7 @@ public class StudentService implements StudentServiceInterface {
 
     @Override
     public boolean existsStudentByUserName(String userName) {
-        return studentRepository.existsHallgatoByUserName(userName);
+        return studentRepository.existsStudentByUserName(userName);
     }
 
     @Override
