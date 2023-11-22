@@ -13,15 +13,16 @@
 </head>
 <body>
 <div class="center-screen">
-<form th:action="@{/hallgato/__${id}__}" method="get">
-    <button type="submit" value="hozzaadoldal" class="btn btn-secondary">Vissza</button><br/>
-</form>
+    <form th:action="@{/hallgato/__${id}__}" method="get">
+        <button type="submit" value="hozzaadoldal" class="btn btn-secondary">Vissza</button>
+        <br/>
+    </form>
     <div>
         <table>
             <tr th:unless="${tantargyak.isEmpty()}">
                 <td>Név:</td>
                 <td colspan="2">Időpont:</td>
-                <td>Időtartam: </td>
+                <td>Időtartam:</td>
                 <td>Kredit:</td>
                 <td></td>
             </tr>
