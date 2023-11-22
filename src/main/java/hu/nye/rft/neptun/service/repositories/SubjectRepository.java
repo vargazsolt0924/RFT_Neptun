@@ -8,16 +8,17 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.Collection;
 
 public interface SubjectRepository extends JpaRepository<Subject, Long> {
-    @Query(value = "SELECT * FROM TANTARGY WHERE TANAR_ID = ?1", nativeQuery = true)
+
+    @Query(value = "SELECT * FROM subject WHERE teacherId = ?1", nativeQuery = true)
     Collection<Subject> getAllSubjectByTeacherId(Long teacherId);
 
     @Modifying
-    @Query(value = "DELETE FROM TANTARGY WHERE tantargy_Id = ?1", nativeQuery = true)
+    @Query(value = "DELETE FROM subject WHERE subjectId = ?1", nativeQuery = true)
     void deleteByIdOnlySubject(Long id);
 
-    @Query(value = "SELECT * FROM TANTARGY WHERE TANTARGY_ID IN (SELECT TANTARGY_ID FROM HALLGATO_TANTARGY_MAP WHERE HALLGATO_ID = ?1)", nativeQuery = true)
+    @Query(value = "SELECT * FROM subject WHERE subjectId IN (SELECT subjectId FROM student_subject WHERE studentId = ?1)", nativeQuery = true)
     Collection<Subject> getAllSubjectThatHasStudentId(Long id);
 
-    @Query(value = "SELECT * FROM TANTARGY WHERE TANTARGY_ID NOT IN (SELECT TANTARGY_ID FROM HALLGATO_TANTARGY_MAP WHERE HALLGATO_ID = ?1)", nativeQuery = true)
+    @Query(value = "SELECT * FROM subject WHERE subjectId NOT IN (SELECT subjectId FROM student_subject WHERE studentId= ?1)", nativeQuery = true)
     Collection<Subject> getAllSubjectThatDoesNotHaveStudentId(Long id);
 }
