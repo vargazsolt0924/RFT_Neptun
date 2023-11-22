@@ -30,7 +30,7 @@
                 <td></td>
             </tr>
             <tr th:each="subject: ${subjects}">
-                <td th:text="${suvject.name}"/>
+                <td th:text="${subject.name}"/>
                 <td th:text="${subject.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0"/>
                 <td th:text="${subject.startTime}" style="text-align: left !IMPORTANT, padding-left: 0.3rem"/>
                 <td th:text="${subject.durationInMinutes} + ' perc'"/>
