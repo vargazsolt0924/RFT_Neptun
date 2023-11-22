@@ -19,3 +19,19 @@ CREATE TABLE IF NOT EXISTS teacher (
     name VARCHAR(255) NOT NULL,
     userName VARCHAR(255) NOT NULL
 );
+
+CREATE TABLE IF NOT EXISTS student_subject (
+    studentId INT,
+    subjectId INT,
+    PRIMARY KEY (studentId, subjectId),
+    FOREIGN KEY (studentId) REFERENCES student(studentId),
+    FOREIGN KEY (subjectId) REFERENCES subject(subjectId)
+);
+
+CREATE TABLE IF NOT EXISTS subject_teacher (
+    subjectId INT,
+    teacherId INT,
+    PRIMARY KEY (subjectId, teacherId),
+    FOREIGN KEY (subjectId) REFERENCES subject(subjectId),
+    FOREIGN KEY (teacherId) REFERENCES teacher(teacherId)
+);
