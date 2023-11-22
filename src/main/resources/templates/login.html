@@ -5,37 +5,38 @@
     <title>Neptun | Belépés</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/index.css">
-  
+
 </head>
 <body>
-    <div class="login-container">
-        <form action="/" method="post">
-            <div class="form-group">
-                <label for="username">Felhasználónév:</label>
-                <input type="text" id="username" name="username"><br>
-                <label for="password">Jelszó:</label><br>
-                <input type="password" id="password" name="password">
-                <br>
-                <input type="checkbox" id="showPasswordCheckbox">
-                <label for="showPasswordCheckbox">Mutass karaktereket</label>
+<div class="login-container">
+    <form action="/" method="post">
+        <div class="form-group">
+            <label for="username">Felhasználónév:</label>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Jelszó:</label><br>
+            <input type="password" id="password" name="password">
+            <br>
+            <input type="checkbox" id="showPasswordCheckbox">
+            <label for="showPasswordCheckbox">Mutass karaktereket</label>
 
-            </div>
-            <div class="form-group">
-                <label>Jogosultság:</label>
-                <input type="radio" value="student" name="type" checked typeInput="type">
-                <label for="type">Hallgató</label>
-                <input type="radio" value="teacher" name="type" id="type">
-                <label for="type">Tanár</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Belépés</button><P> </P>
-            <span th:if="${badLogin == 1}" class="error-message" style="display: none; color: red;">Nem található ilyen felhasználó.</span>
-            <p></p>
-        </form>
-        <form action="register.html">
-            <button type="submit" class="btn btn-secondary">Regisztrálás</button>
-        </form>
-    </div>
-    <script src="../static/js/index.js"></script>
-   
+        </div>
+        <div class="form-group">
+            <label>Jogosultság:</label>
+            <input type="radio" value="student" name="type" checked typeInput="type">
+            <label for="type">Hallgató</label>
+            <input type="radio" value="teacher" name="type" id="type">
+            <label for="type">Tanár</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Belépés</button>
+        <P></P>
+        <span th:if="${badLogin == 1}" class="error-message" style="display: none; color: red;">Nem található ilyen felhasználó.</span>
+        <p></p>
+    </form>
+    <form action="register.html">
+        <button type="submit" class="btn btn-secondary">Regisztrálás</button>
+    </form>
+</div>
+<script src="../static/js/index.js"></script>
+
 </body>
 </html>

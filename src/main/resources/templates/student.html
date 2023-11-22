@@ -13,10 +13,12 @@
 <body>
 <div class="center-screen">
     <form th:action="@{/}" method="get">
-        <button type="submit" value="vissza" class="btn btn-secondary">Kijelentkezés</button><br><br>
+        <button type="submit" value="vissza" class="btn btn-secondary">Kijelentkezés</button>
+        <br><br>
     </form>
     <form th:action="@{/hallgato/__${id}__/enrollTantargy}" method="get">
-        <button type="submit" value="hozzaadoldal" class="btn btn-primary">Új Tantárgy felvétele</button><br>
+        <button type="submit" value="hozzaadoldal" class="btn btn-primary">Új Tantárgy felvétele</button>
+        <br>
     </form>
 
     <table>
@@ -32,12 +34,13 @@
             <td th:text="${tantargy.name}">
             <td th:text="${tantargy.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0">
             <td th:text="${tantargy.startTime}" style="text-align: left !IMPORTANT , padding-left: 0.3rem">
-            <td th:text="${tantargy.durationInMinutes} + ' perc'" >
+            <td th:text="${tantargy.durationInMinutes} + ' perc'">
             <td th:text="${tantargy.kredit}">
             <td th:text="${tantargy.tanar.name}"></td>
             <td>
                 <form th:action="@{/hallgato/__${id}__/leaveTantargy/__${tantargy.tantargyId}__}" method="get">
-                   <button type="submit" value="vissza" class="btn btn-primary">Leadás</button><br>
+                    <button type="submit" value="vissza" class="btn btn-primary">Leadás</button>
+                    <br>
                 </form>
             </td>
         </tr>
