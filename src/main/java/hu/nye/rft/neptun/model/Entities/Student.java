@@ -37,6 +37,19 @@ public class Student {
         this.subjects = subjects;
     }
 
+    public Long getStudentId() {
+        return studentId;
+    }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public Set<Subject> getSubjects() {
+        return subjects;
+    }
 }

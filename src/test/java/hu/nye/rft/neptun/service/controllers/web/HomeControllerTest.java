@@ -8,6 +8,7 @@ import hu.nye.rft.neptun.service.services.teacher.TeacherServiceInterface;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.springframework.ui.Model;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -49,6 +50,7 @@ class HomeControllerTest {
 
     @BeforeEach
     public void setUp() {
+        MockitoAnnotations.initMocks(this);
         underTest = new HomeController(studentServiceInterface, teacherServiceInterface);
     }
 

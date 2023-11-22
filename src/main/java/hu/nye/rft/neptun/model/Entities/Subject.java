@@ -47,6 +47,66 @@ public class Subject {
     public Subject(String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxHallgato, int kredit, Teacher teacherById) {
     }
 
+    public Long getSubjectId() {
+        return subjectId;
+    }
+
+    public void setSubjectId(Long subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDayOfTheWeek() {
+        return dayOfTheWeek;
+    }
+
+    public void setDayOfTheWeek(String dayOfTheWeek) {
+        this.dayOfTheWeek = dayOfTheWeek;
+    }
+
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public int getDurationInMinutes() {
+        return durationInMinutes;
+    }
+
+    public void setDurationInMinutes(int durationInMinutes) {
+        this.durationInMinutes = durationInMinutes;
+    }
+
+    public int getMaxStudent() {
+        return maxStudent;
+    }
+
+    public void setMaxStudent(int maxStudent) {
+        this.maxStudent = maxStudent;
+    }
+
+    public int getKredit() {
+        return kredit;
+    }
+
+    public void setKredit(int kredit) {
+        this.kredit = kredit;
+    }
+
+    public Set<Student> getStudents() {
+        return students;
+    }
+
     public void addStudent(Student student) {
         this.students.add(student);
         student.getSubjects().add(this);
