@@ -4,24 +4,8 @@
     <meta charset="UTF-8">
     <title>Neptun Belépés</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #798fdaac;
-        }
-        .login-container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px 0px rgba(0,0,255,0.1);
-            border: 1px solid #007bff; 
-        }
-     
-    </style>
+    <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
     <div class="login-container">
@@ -38,9 +22,9 @@
             </div>
             <div class="form-group">
                 <label>Jogosultság:</label>
-                <input type="radio" value="hallgato" name="type" checked id="type">
+                <input type="radio" value="student" name="type" checked id="type">
                 <label for="type">Hallgató</label>
-                <input type="radio" value="tanar" name="type" id="type">
+                <input type="radio" value="teacher" name="type" id="type">
                 <label for="type">Tanár</label>
             </div>
             <button type="submit" class="btn btn-primary">Belépés</button><P> </P>
@@ -51,23 +35,7 @@
             <button type="submit" class="btn btn-secondary">Regisztrálás</button>
         </form>
     </div>
-
-    <script>
-      
-        document.querySelector('form').addEventListener('submit', function(event) {
-            event.preventDefault(); 
-            document.querySelector('.error-message').style.display = 'block'; 
-        });
-        const passwordInput = document.getElementById('password');
-    const showPasswordCheckbox = document.getElementById('showPasswordCheckbox');
-
-    showPasswordCheckbox.addEventListener('change', function() {
-        if (showPasswordCheckbox.checked) {
-            passwordInput.type = 'text';
-        } else {
-            passwordInput.type = 'password';
-        }
-    });
-    </script>
+    <script src="script.js"></script>   
+   
 </body>
 </html>
