@@ -15,7 +15,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.Collection;
 
 @Controller
-public class StudentWebController {
+public class StudentController {
 
     @Autowired
     private StudentServiceInterface studentServiceInterface;
@@ -23,7 +23,7 @@ public class StudentWebController {
     @Autowired
     private SubjectServiceInterface subjectServiceInterface;
 
-    public StudentWebController(StudentServiceInterface studentServiceInterface, SubjectServiceInterface subjectServiceInterface) {
+    public StudentController(StudentServiceInterface studentServiceInterface, SubjectServiceInterface subjectServiceInterface) {
         this.studentServiceInterface = studentServiceInterface;
         this.subjectServiceInterface = subjectServiceInterface;
     }
@@ -45,7 +45,7 @@ public class StudentWebController {
 
         model.addAttribute("id", id);
         model.addAttribute("subjects", allSubject);
-        return "enrollTantargy";
+        return "enrollSubject";
     }
 
     @GetMapping("/subject/{id}/enrollSubject/{subjectId}")
