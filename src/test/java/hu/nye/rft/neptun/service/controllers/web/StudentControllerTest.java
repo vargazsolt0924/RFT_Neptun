@@ -44,7 +44,7 @@ class StudentControllerTest {
     private Teacher teacher = new Teacher("name", "username");
 
     @Mock
-    private Subject subject = new Subject("name", "hetfo", "1200", 45, 20, 3, teacher);
+    private Subject subject = new Subject("name", "monday", "1200", 45, 20, 3, teacher);
 
 
     @BeforeEach
