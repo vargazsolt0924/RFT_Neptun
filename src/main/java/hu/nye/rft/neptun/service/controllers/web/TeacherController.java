@@ -42,7 +42,7 @@ public class TeacherController {
         return "teacher";
     }
 
-    @GetMapping("/teacher/{id}/addTantargy")
+    @GetMapping("/teacher/{id}/addSubject")
     public String addSubjectPage(@PathVariable Long id, Model model) {
         model.addAttribute("id", id);
         return "addSubject";
