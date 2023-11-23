@@ -12,6 +12,10 @@ jobs:
         with:
           distribution: 'adopt'
           java-version: '11'
+      - name: Restore Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        with:
+          step: restore
       - name: Compile with Maven
         run: mvn compile
       - name: Test with Maven
@@ -25,3 +29,7 @@ jobs:
         with:
           name: neptun-coverage
           path: ./RFT_Neptun/target/site/jacoco
+      - name: Restore Maven cache
+        uses: skjolber/maven-cache-github-action@v1
+        with:
+          step: save
