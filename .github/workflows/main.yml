@@ -14,3 +14,14 @@ jobs:
           java-version: '11'
       - name: Compile with Maven
         run: mvn compile
+      - name: Test with Maven
+        run: mvn ./RFT_Neptun/pom.xml  test
+      - name: Coverage with JaCoCo
+        if: always()
+        run: mvn ./RFT_Neptun/pom.xml  jacoco:report
+      - name: Publish coverage report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: neptun-coverage
+          path: ./RFT_Neptun/target/site/jacoco
