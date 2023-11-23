@@ -134,7 +134,8 @@
                 <version>0.8.7</version>
                 <configuration>
                     <excludes>
-                        <!-- Add any specific exclusions if needed -->
+                        <exclude>hu.nye.rft.neptun.model.*</exclude>
+                        <exclude>hu.nye.rft.neptun.NeptunApplication.*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
