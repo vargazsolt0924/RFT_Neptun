@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="hu">
+<html xmlns:th="http://www.thymeleaf.org/" lang="hu">
 <head>
     <meta charset="UTF-8">
     <title>Neptun | Tantárgy felvétele</title>
@@ -16,8 +16,8 @@
     <img src="logo.png" alt="logo" width="50%">
 </div>
 <div class="center-screen">
-    <form th:action="@{/student/__${id}__}" method="get">
-        <button type="submit" value="hozzaadoldal" class="btn btn-secondary">Vissza</button>
+    <form th:action="@{/student/${id}}" method="get">
+        <button type="submit" value="addPage" class="btn btn-secondary">Vissza</button>
         <br/>
     </form>
     <div>
@@ -30,14 +30,14 @@
                 <td></td>
             </tr>
             <tr th:each="subject: ${subjects}">
-                <td th:text="${subject.name}"/>
-                <td th:text="${subject.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0"/>
-                <td th:text="${subject.startTime}" style="text-align: left !IMPORTANT, padding-left: 0.3rem"/>
-                <td th:text="${subject.durationInMinutes} + ' perc'"/>
-                <td th:text="${subject.credit}"/>
+                <td th:text="${subject.name}"></td>
+                <td th:text="${subject.dayOfTheWeek}" style="text-align: right !IMPORTANT, padding-right: 0"></td>
+                <td th:text="${subject.startTime}" style="text-align: left !IMPORTANT, padding-left: 0.3rem"></td>
+                <td th:text="${subject.durationInMinutes} + ' perc'"></td>
+                <td th:text="${subject.credit}"></td>
                 <td>
-                    <form th:action="@{/student/__${id}__/enrollSubject/__${subject.subjectId}__}" method="get">
-                        <button type="submit" value="vissza" class="btn btn-primary">Jelentkezés</button>
+                    <form th:action="@{/student/${id}/enrollSubject/${subject.subjectId}}" method="get">
+                        <button type="submit" value="back" class="btn btn-primary">Jelentkezés</button>
                     </form>
                 </td>
             </tr>

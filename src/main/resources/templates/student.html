@@ -16,11 +16,11 @@
 </div>
 <div class="center-screen">
     <form th:action="@{/}" method="get">
-        <button type="submit" value="vissza" class="btn btn-secondary">Kijelentkezés</button>
+        <button type="submit" value="back" class="btn btn-secondary">Kijelentkezés</button>
         <br><br>
     </form>
     <form th:action="@{/student/__${id}__/enrollSubject}" method="get">
-        <button type="submit" value="hozzaadoldal" class="btn btn-primary">Új Tantárgy felvétele</button>
+        <button type="submit" value="addPage" class="btn btn-primary">Új Tantárgy felvétele</button>
         <br>
     </form>
 
@@ -42,7 +42,7 @@
             <td th:text="${subject.teacher.name}"></td>
             <td>
                 <form th:action="@{/student/__${id}__/leaveSubject/__${subject.subjectId}__}" method="get">
-                    <button type="submit" value="vissza" class="btn btn-primary">Leadás</button>
+                    <button type="submit" value="back" class="btn btn-primary">Leadás</button>
                     <br>
                 </form>
             </td>

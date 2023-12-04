@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http:/.thymeleaf.org" lang="hu">
+<html xmlns:th="http:/.thymeleaf.org" lang="hu" >
 <head>
     <meta charset="UTF-8">
     <title>Neptun | Tantárgy hozzáadása</title>
@@ -24,12 +24,12 @@
             <div class="form-group">
                 <label>Neve:</label>
                 <input type="text" id="name" name="name" size="35" placeholder="A rendszerfejlesztés technológiája"
-                       class="bevitel"><br>
+                       class="input"><br>
             </div>
             <div class="form-group">
                 <label>A hét melyik napján:</label>
                 <input type="text" id="dayOfTheWeek" name="dayOfTheWeek" size="7" placeholder="Kedd"
-                       class="bevitel"><br>
+                       class="input"><br>
             </div>
             <div class="form-group">
                 <label>Kezdési idő:</label>
@@ -38,20 +38,20 @@
             <div class="form-group">
                 <label>Percben mért hossza:</label>
                 <input type="number" id="durationInMinutes" pattern="^[0-9]*$" size="5" name="durationInMinutes"
-                       value="90" class="bevitel"><br>
+                       value="90" class="input"><br>
             </div>
             <div class="form-group">
                 <label>Kredit:</label>
                 <input type="number" id="credit" pattern="^[0-9]*$" size="3" name="credit" value="5"
-                       class="bevitel"><br>
+                       class="input"><br>
             </div>
             <div class="form-group">
                 <label>Maximum hallgatói létszám:</label>
-                <input type="number" id="maxHallgato" pattern="^[0-9]*$" size="4" name="maxHallgato" value="50"
-                       class="bevitel  "><br>
+                <input type="number" id="maxStudent" pattern="^[0-9]*$" size="4" name="maxHallgato" value="50"
+                       class="input"><br>
             </div>
             <div class="form-group">
-                <button type="submit" value="hozzaad" class="btn btn-primary">Hozzáadás</button>
+                <button type="submit" value="add" class="btn btn-primary">Hozzáadás</button>
             </div>
         </form>
     </div>

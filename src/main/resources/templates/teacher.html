@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title th:text="'Neptun | ' + ${tanar.name}"/>Neptun</title>
+    <title th:text="'Neptun | ' + ${tanar.name}"></title>Neptun</title>
     <link th:href="@{/css/sb-admin-2.css}" rel="stylesheet"/>
     <link th:href="@{/css/sb-admin-2.min.css}" rel="stylesheet"/>
     <script th:src="@{/js/sb-admin-2.js}"></script>
@@ -16,11 +16,11 @@
 </div>
 <div class="center-screen">
     <form th:action="@{/}" method="get">
-        <button type="submit" value="vissza" class="btn btn-secondary">Kijelentkezés</button>
+        <button type="submit" value="back" class="btn btn-secondary">Kijelentkezés</button>
         <br><br>
     </form>
     <form th:action="@{/teacher/__${id}__/addSubject}" method="get" style="margin-bottom: 1rem">
-        <button type="submit" value="hozzaadoldal" class="btn btn-primary">Új Tantárgy hozzáadása</button>
+        <button type="submit" value="addPage" class="btn btn-primary">Új Tantárgy hozzáadása</button>
         <br>
     </form>
 
@@ -33,11 +33,11 @@
             <td></td>
         </tr>
         <tr th:each="subject: ${subjects}">
-            <td th:text="${subject.name}"/>
-            <td th:text="${subject.dayOfTheWeek}" style="text-align: right, padding-right: 0"/>
-            <td th:text="${subject.startTime}" style="text-align: left, padding-left: 0.3rem"/>
-            <td th:text="${subject.durationInMinutes} + ' perc'"/>
-            <td th:text="${subject.credit}"/>
+            <td th:text="${subject.name}"></td>
+            <td th:text="${subject.dayOfTheWeek}" style="text-align: right, padding-right: 0"></td>
+            <td th:text="${subject.startTime}" style="text-align: left, padding-left: 0.3rem"></td>
+            <td th:text="${subject.durationInMinutes} + ' perc'"></td>
+            <td th:text="${subject.credit}"></td>
             <td>
                 <form th:action="@{/teacher/__${id}__/removeSubject/__${subject.subjectId}__}" method="get">
                     <button type="submit" value="vissza" class="btn btn-primary">Törlés</button>
