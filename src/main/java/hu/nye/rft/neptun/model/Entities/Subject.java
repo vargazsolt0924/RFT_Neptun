@@ -32,6 +32,32 @@ public class Subject {
     @Column(name = "credit", nullable = false)
     public int credit;
 
+    @ManyToOne(
+            cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+            name = "teacher_id",
+            referencedColumnName = "teacherId"
+    )
+    public Teacher teacher;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            })
+    @JoinTable(
+            name = "StudentSubjectMap",
+            joinColumns = @JoinColumn(
+                    name = "subject_id",
+                    referencedColumnName = "subjectId"
+            ),
+            inverseJoinColumns = @JoinColumn(
+                    name = "student_id",
+                    referencedColumnName = "studentId"
+            )
+    )
+
     private final Set<Student> students = new HashSet<>();;
 
     public Subject(Long subjectId, String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxStudent, int credit) {
@@ -44,7 +70,7 @@ public class Subject {
         this.credit = credit;
     }
 
-    public Subject(String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxHallgato, int credit, Teacher teacherById) {
+    public Subject(String name, String dayOfTheWeek, String startTime, int durationInMinutes, int maxStudent, int credit, Teacher teacherById) {
     }
 
     public Long getSubjectId() {

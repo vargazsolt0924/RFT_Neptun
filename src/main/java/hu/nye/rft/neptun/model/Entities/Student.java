@@ -25,6 +25,12 @@ public class Student {
     public String userName;
 
     @Getter
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "students")
     @JsonIgnore
     public Set<Subject> subjects = new HashSet<>();
 
